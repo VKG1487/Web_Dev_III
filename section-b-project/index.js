@@ -4,6 +4,8 @@ const app = express();
 
 const packages = require("./data/tour.js");
 
+const fs=require('fs');
+
 app.get("/", (req,res)=>{
     res.send("hello world!!");
 });
@@ -31,5 +33,5 @@ app.get("/packages/:destination",(req,res)=>{
 })
 
 app.listen(3000,()=>{
-    console.log("serer is running on 3000");
+    console.log("server is running on 3000");
 });
