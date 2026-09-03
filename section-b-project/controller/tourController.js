@@ -23,7 +23,7 @@ const getTourById = (req, res) => {
 };
 
 // Get tours by query
-const getToursByQuery = (req, res) => {
+const getByQuery = (req, res) => {
     const query = req.query.query || "";
 
     const tours = tourModel.getByQuery(query);
@@ -31,8 +31,17 @@ const getToursByQuery = (req, res) => {
     res.json(tours);
 };
 
+const saveTours = (req,res)=>{
+    tours=req.body;
+    tourModel.save(tours);
+    res.status(201).json({
+        message:"Tours saved successfully"
+    });
+}
+
 module.exports = {
     getAllTours,
     getTourById,
-    getToursByQuery
+    getByQuery,
+    saveTours
 };
