@@ -38,9 +38,38 @@ const express = require("express");
 
 const app = express();
 
-const tourRoute = require("./routes/tourRoute");
+// client -> Request -> Middleware1 -> Middleware2 -> Middleware3 -> Response -> client
 
-app.use(express.json());
+// const middleware1 = (req, res, next) => {
+//   console.log("Middleware 1");
+//   next();
+// }
+
+const logger = (req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+}
+
+// app.use(logger);
+
+const checkAge = (req, res, next) => {
+  const age = 6;
+  if(age<18){
+    return res.status(403).json({nessage:"You are not allowed to access this recourse" });
+  }
+  next();
+};
+
+app.use(logger);
+app.use(checkAge);
+
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
+// const tourRoute = require("./routes/tourRoute");
+
+// app.use(express.json());
 
 // Tour routes
 app.use("/api", tourRoute);
