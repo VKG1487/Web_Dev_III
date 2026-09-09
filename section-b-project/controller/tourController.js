@@ -22,6 +22,7 @@ const getTourById = (req, res) => {
     res.json(tour);
 };
 
+
 // Get tours by query
 const getByQuery = (req, res) => {
     const query = req.query.query || "";
