@@ -7,7 +7,7 @@ const getAll = () => {
     return JSON.parse(toursData);
 };
 
-const getById = (id) => {
+const getTourById = (id) => {
     const toursData = getAll();
     return toursData.find(tour => tour.id === id);
 }
@@ -34,7 +34,7 @@ const updateTour = (id, updatedTour) => {
 
 module.exports = {
     getAll,
-    getById,
+    getTourById,
     getByquery,
     save,
     updateTour
