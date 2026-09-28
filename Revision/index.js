@@ -51,13 +51,13 @@
 //   .digest("hex");
 // console.log("SHA-256:", hash);
 
-const dns= require('dns');
-dns.lookup('www.example.com', (err, address, family) => {
-    if (err,address) {
-        console.error('DNS lookup error:', err);
-        return;
-    }
-    console.log('DNS lookup successful:');
-    console.log(`Address: ${address}`);
-    console.log(`Family: ${family}`);
-});
+// const dns= require('dns');
+// dns.lookup('www.example.com', (err, address, family) => {
+//     if (err,address) {
+//         console.error('DNS lookup error:', err);
+//         return;
+//     }
+//     console.log('DNS lookup successful:');
+//     console.log(`Address: ${address}`);
+//     console.log(`Family: ${family}`);
+// });
