@@ -67,37 +67,38 @@ require('dotenv').config();
 // console.log(process.env.PORT);
 // console.log(process.argv);
 
-const students = [
-    {id : 1, name: 'Alice', age: 20},
-    {id : 2, name: 'Bob', age: 22},
-    {id : 3, name: 'Charlie', age: 21}
-]
+// const students = [
+//     {id : 1, name: 'Alice', age: 20},
+//     {id : 2, name: 'Bob', age: 22},
+//     {id : 3, name: 'Charlie', age: 21}
+// ]
 
 
-const port = process.env.PORT || 3000;
-const http = require('http');
+// const port = process.env.PORT || 3000;
+// const http = require('http');
 
-http.createServer((req, res) => {
-    if (req.method === 'GET' && req.url === '/') {
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.end('Hello, World!\n');
-        return;
-    }else if (req.method === 'GET' && req.url === '/about') {
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.end('About Page\n');
-    }else if (req.method === 'GET' && req.url === '/contact') {
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.end('Contact Page\n');
-    }else if (req.method === 'GET' && req.url === '/services') {
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.end('Services Page\n');
-    }else if (req.method === 'GET' && req.url === '/students') {
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify(students));
-    }else{
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        res.end('Not Found\n');
-    }
-}).listen(port, () => {
-    console.log('Server running at http://localhost:' + port);
-});
+// http.createServer((req, res) => {
+//     if (req.method === 'GET' && req.url === '/') {
+//         res.writeHead(200, { 'Content-Type': 'text/plain' });
+//         res.end('Hello, World!\n');
+//         return;
+//     }else if (req.method === 'GET' && req.url === '/about') {
+//         res.writeHead(200, { 'Content-Type': 'text/plain' });
+//         res.end('About Page\n');
+//     }else if (req.method === 'GET' && req.url === '/contact') {
+//         res.writeHead(200, { 'Content-Type': 'text/plain' });
+//         res.end('Contact Page\n');
+//     }else if (req.method === 'GET' && req.url === '/services') {
+//         res.writeHead(200, { 'Content-Type': 'text/plain' });
+//         res.end('Services Page\n');
+//     }else if (req.method === 'GET' && req.url === '/students') {
+//         res.writeHead(200, { 'Content-Type': 'application/json' });
+//         res.end(JSON.stringify(students));
+//     }else{
+//         res.writeHead(404, { 'Content-Type': 'text/plain' });
+//         res.end('Not Found\n');
+//     }
+// }).listen(port, () => {
+//     console.log('Server running at http://localhost:' + port);
+// });
+
